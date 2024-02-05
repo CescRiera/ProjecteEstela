@@ -1,6 +1,14 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 class Biblioteca {
+<<<<<<< HEAD
+    private Usuarios usuarioActual;
+    private ArrayList<LlibreAudiovisual> LlistaAudiosOcupats;
+    private ArrayList<LlibreAudiovisual> LlistaAudiosDisponibles;
+    private Web web;
+=======
     private Usuario usuarioActual;
+>>>>>>> 06b6fd7a18e92413af133cea89e633a313b6b24f
     private Scanner scanner;
 
     public Biblioteca() {
@@ -23,6 +31,22 @@ class Biblioteca {
             System.out.println("Usuario o contraseña incorrectos. Intenta de nuevo.");
             login();
         }
+    }
+
+    public ArrayList<LlibreAudiovisual> getLlistaAudiosOcupats() {
+        return LlistaAudiosOcupats;
+    }
+
+    public void setLlistaAudiosOcupats(ArrayList<LlibreAudiovisual> llistaAudiosOcupats) {
+        LlistaAudiosOcupats = llistaAudiosOcupats;
+    }
+
+    public ArrayList<LlibreAudiovisual> getLlistaAudiosDisponibles() {
+        return LlistaAudiosDisponibles;
+    }
+
+    public void setLlistaAudiosDisponibles(ArrayList<LlibreAudiovisual> llistaAudiosDisponibles) {
+        LlistaAudiosDisponibles = llistaAudiosDisponibles;
     }
 
     private void menuAdmin() {
