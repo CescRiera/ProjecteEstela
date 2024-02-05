@@ -1,6 +1,6 @@
 import java.util.Scanner;
 class Biblioteca {
-    private Usuarios usuarioActual;
+    private Usuario usuarioActual;
     private Scanner scanner;
 
     public Biblioteca() {
@@ -14,10 +14,10 @@ class Biblioteca {
         String contrasenyaInput = scanner.nextLine();
 
         if (usuarioInput.equals("admin") && contrasenyaInput.equals("admin")) {
-            usuarioActual = new Usuarios("admin", "admin", "Cesc", "Riera", "12345678A", "644748764", "Calle Principal 123");
+            usuarioActual = new Usuario("admin", "admin", "Cesc", "Riera", "12345678A", "644748764", "Calle Principal 123");
             menuAdmin();
         } else if (usuarioInput.equals("encarregat") && contrasenyaInput.equals("encarregat")) {
-            usuarioActual = new Usuarios("encarregat", "encarregat", "Didac", "Garcia", "98765432B", "784483559", "Avenida Secundaria 456");
+            usuarioActual = new Usuario("encarregat", "encarregat", "Didac", "Garcia", "98765432B", "784483559", "Avenida Secundaria 456");
             menuTreballador();
         } else {
             System.out.println("Usuario o contraseña incorrectos. Intenta de nuevo.");

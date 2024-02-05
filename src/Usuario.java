@@ -1,5 +1,5 @@
 
-class Usuarios {
+class Usuario {
     private String usuario;
     private String contrasenya;
     private String nombre;
@@ -8,7 +8,7 @@ class Usuarios {
     private String telefono;
     private String direccion;
 
-    public Usuarios(String usuario, String contrasenya, String nombre, String apellido, String dni, String telefono, String direccion) {
+    public Usuario(String usuario, String contrasenya, String nombre, String apellido, String dni, String telefono, String direccion) {
         this.usuario = usuario;
         this.contrasenya = contrasenya;
         this.nombre = nombre;
