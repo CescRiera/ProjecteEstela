@@ -1,5 +1,5 @@
 
-class Usuario {
+abstract class Usuario {
     private String usuario;
     private String contrasenya;
     private String nombre;

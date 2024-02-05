@@ -1,12 +1,13 @@
 import java.util.ArrayList;
+import java.util.Date;
 
 public class LlibrePaper {
     private ArrayList<Llibre> llibresDisponibles;
     private ArrayList<Llibre> llibresOcupats;
-    private String dataImpressio;
+    private Date dataImpressio;
     private int quantitatFulles;
 
-    public LlibrePaper(String dataImpressio, int quantitatFulles) {
+    public LlibrePaper(Date dataImpressio, int quantitatFulles) {
         this.llibresDisponibles = new ArrayList<>();
         this.llibresOcupats = new ArrayList<>();
         this.dataImpressio = dataImpressio;

@@ -14,10 +14,10 @@ class Biblioteca {
         String contrasenyaInput = scanner.nextLine();
 
         if (usuarioInput.equals("admin") && contrasenyaInput.equals("admin")) {
-            usuarioActual = new Usuario("admin", "admin", "Cesc", "Riera", "12345678A", "644748764", "Calle Principal 123");
+            usuarioActual = new Admin("admin", "admin", "Cesc", "Riera", "12345678A", "644748764", "Calle Principal 123");
             menuAdmin();
         } else if (usuarioInput.equals("encarregat") && contrasenyaInput.equals("encarregat")) {
-            usuarioActual = new Usuario("encarregat", "encarregat", "Didac", "Garcia", "98765432B", "784483559", "Avenida Secundaria 456");
+            usuarioActual = new Treballador("encarregat", "encarregat", "Didac", "Garcia", "98765432B", "784483559", "Avenida Secundaria 456");
             menuTreballador();
         } else {
             System.out.println("Usuario o contraseña incorrectos. Intenta de nuevo.");
