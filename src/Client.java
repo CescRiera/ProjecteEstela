@@ -7,5 +7,5 @@ public abstract class Client {
     private String producteEnPrestec;
     private String dataIniciPrestec;
     private String dataDevolucio;
-    // Otros atributos relevantes
+
 }
