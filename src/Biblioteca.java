@@ -1,14 +1,10 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 class Biblioteca {
-<<<<<<< HEAD
-    private Usuarios usuarioActual;
+    private Usuario usuarioActual;
     private ArrayList<LlibreAudiovisual> LlistaAudiosOcupats;
     private ArrayList<LlibreAudiovisual> LlistaAudiosDisponibles;
     private Web web;
-=======
-    private Usuario usuarioActual;
->>>>>>> 06b6fd7a18e92413af133cea89e633a313b6b24f
     private Scanner scanner;
 
     public Biblioteca() {
