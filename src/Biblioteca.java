@@ -58,7 +58,7 @@ class Biblioteca {
 
 
     private void menuAdmin() {
-        // Implementar menú para el usuario admin aquí
+
         while (true){
             mostrarInformacionUsuario();
             System.out.println("Acceso total a las características de la biblioteca.");
@@ -81,10 +81,15 @@ class Biblioteca {
                 String tipusClient = scanner.nextLine();
                 Client client1 = new Client(dni,nom,cognom,gmail,tipusClient);
                 usuarioActual.Prestar(client1, getLlistaLlibresPaper().get(1));
-                LlistaClients.add(client1);
+
+                // LA LINIA DE SOTA DONA ERROR DONA ERROR
+
+                //LlistaClients.add(client1);
+
             }else if(opcioEscollida == 2){
                 System.out.println("DNI: ");
                 String dni = scanner.nextLine();
+                dni = scanner.nextLine();
                 System.out.println("ISBN: ");
                 String isbn = scanner.nextLine();
                 LlibrePaper llibreRetornar = null;
