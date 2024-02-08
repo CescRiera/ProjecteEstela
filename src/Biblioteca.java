@@ -1,18 +1,40 @@
+import java.io.Console;
 import java.util.ArrayList;
 import java.util.Scanner;
 class Biblioteca {
-<<<<<<< HEAD
-    private Usuarios usuarioActual;
-    private ArrayList<LlibreAudiovisual> LlistaAudiosOcupats;
-    private ArrayList<LlibreAudiovisual> LlistaAudiosDisponibles;
-    private Web web;
-=======
     private Usuario usuarioActual;
->>>>>>> 06b6fd7a18e92413af133cea89e633a313b6b24f
+    private ArrayList<LlibreAudiovisual> LlistaLlibresAudiovisuals;
+    private ArrayList<LlibrePaper> LlistaLlibresPaper;
+    private ArrayList<Client> LlistaClients;
+    private Web web;
     private Scanner scanner;
 
     public Biblioteca() {
         scanner = new Scanner(System.in);
+    }
+
+    public ArrayList<LlibreAudiovisual> getLlistaLlibresAudiovisuals() {
+        return LlistaLlibresAudiovisuals;
+    }
+
+    public void setLlistaLlibresAudiovisuals(ArrayList<LlibreAudiovisual> llistaLlibresAudiovisuals) {
+        LlistaLlibresAudiovisuals = llistaLlibresAudiovisuals;
+    }
+
+    public ArrayList<LlibrePaper> getLlistaLlibresPaper() {
+        return LlistaLlibresPaper;
+    }
+
+    public void setLlistaLlibresPaper(ArrayList<LlibrePaper> llistaLlibresPaper) {
+        LlistaLlibresPaper = llistaLlibresPaper;
+    }
+
+    public ArrayList<Client> getLlistaClients() {
+        return LlistaClients;
+    }
+
+    public void setLlistaClients(ArrayList<Client> llistaClients) {
+        LlistaClients = llistaClients;
     }
 
     public void login() {
@@ -33,27 +55,54 @@ class Biblioteca {
         }
     }
 
-    public ArrayList<LlibreAudiovisual> getLlistaAudiosOcupats() {
-        return LlistaAudiosOcupats;
-    }
 
-    public void setLlistaAudiosOcupats(ArrayList<LlibreAudiovisual> llistaAudiosOcupats) {
-        LlistaAudiosOcupats = llistaAudiosOcupats;
-    }
-
-    public ArrayList<LlibreAudiovisual> getLlistaAudiosDisponibles() {
-        return LlistaAudiosDisponibles;
-    }
-
-    public void setLlistaAudiosDisponibles(ArrayList<LlibreAudiovisual> llistaAudiosDisponibles) {
-        LlistaAudiosDisponibles = llistaAudiosDisponibles;
-    }
 
     private void menuAdmin() {
         // Implementar menú para el usuario admin aquí
-        mostrarInformacionUsuario();
-        System.out.println("Acceso total a las características de la biblioteca.");
+        while (true){
+            mostrarInformacionUsuario();
+            System.out.println("Acceso total a las características de la biblioteca.");
+            System.out.println("Escull un número: \n" +
+                    "1. Prestar\n"+
+                    "2. Retornar\n"+
+                    "3. Sortir\n");
+            int opcioEscollida = scanner.nextInt();
+            if (opcioEscollida ==1){
+                System.out.println("DNI: ");
+                String dni = scanner.nextLine();
+                dni = scanner.nextLine();
+                System.out.println("Nom: ");
+                String nom = scanner.nextLine();
+                System.out.println("Cognom: ");
+                String cognom = scanner.nextLine();
+                System.out.println("Gmail: ");
+                String gmail = scanner.nextLine();
+                System.out.println("Tipus de client: ");
+                String tipusClient = scanner.nextLine();
+                Client client1 = new Client(dni,nom,cognom,gmail,tipusClient);
+                usuarioActual.Prestar(client1, getLlistaLlibresPaper().get(1));
+                LlistaClients.add(client1);
+            }else if(opcioEscollida == 2){
+                System.out.println("DNI: ");
+                String dni = scanner.nextLine();
+                System.out.println("ISBN: ");
+                String isbn = scanner.nextLine();
+                LlibrePaper llibreRetornar = null;
+                for (int i = 0; i<getLlistaLlibresPaper().size();i++){
+                    if(getLlistaLlibresPaper().get(i).getIsbn()==isbn){
+                        llibreRetornar = getLlistaLlibresPaper().get(i);
+                    }
+                }
+                for(int i = 0; i<getLlistaClients().size();i++){
+                    if(getLlistaClients().get(i).getDni() == dni){
 
+                        usuarioActual.Retornar(getLlistaClients().get(i),llibreRetornar);
+                    }
+                }
+            } else if (opcioEscollida == 3) {
+                break;
+            }
+        }
     }
 
     private void menuTreballador() {

@@ -1,3 +1,5 @@
+import java.util.Calendar;
+import java.util.Date;
 
 class Usuario {
     private String usuario;
@@ -45,4 +47,31 @@ class Usuario {
     public String getDireccion() {
         return direccion;
     }
+
+    public void Prestar(Client client,LlibrePaper llibre){
+        if(client.getProducteEnPrestec() == null && llibre.isDisponibilitat()){
+            llibre.setDisponibilitat(false);
+            client.setProducteEnPrestec(llibre);
+            client.setDataIniciPrestec(new Date());
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTime(client.getDataIniciPrestec());
+            calendar.add(Calendar.MONTH,1);
+            client.setDataDevolucio(calendar.getTime());
+            System.out.println("El client te fins el "+client.getDataDevolucio()+" per retornar el llibre");
+        } else if (!llibre.isDisponibilitat()) {
+            System.out.println("El llibre no es troba disponible");
+        } else if (client.getProducteEnPrestec()!=null) {
+            System.out.println("El client ja te un producte prestat");
+        }
+    }
+    public void Retornar(Client client, LlibrePaper llibre){
+        if(client.getProducteEnPrestec()!=null){
+            llibre.setDisponibilitat(true);
+            client.setProducteEnPrestec(null);
+            client.setDataIniciPrestec(null);
+            client.setDataDevolucio(null);
+            System.out.println("El llibre ha sigut retornat");
+        }
+    }
+
 }

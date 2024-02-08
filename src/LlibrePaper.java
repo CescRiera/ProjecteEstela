@@ -1,20 +1,28 @@
 import java.util.ArrayList;
 
-public class LlibrePaper {
-    private ArrayList<Llibre> llibresDisponibles;
-    private ArrayList<Llibre> llibresOcupats;
+public class LlibrePaper extends Llibre{
     private String dataImpressio;
     private int quantitatFulles;
 
-    public LlibrePaper(String dataImpressio, int quantitatFulles) {
-        this.llibresDisponibles = new ArrayList<>();
-        this.llibresOcupats = new ArrayList<>();
+    public LlibrePaper(String titol, String isbn, String[] autors, boolean disponibilitat, String dataImpressio, int quantitatFulles) {
+        super(titol, isbn, autors, disponibilitat);
         this.dataImpressio = dataImpressio;
         this.quantitatFulles = quantitatFulles;
     }
 
-    // Mètodes per gestionar els llibres disponibles i ocupats
-    public void afegirLlibreDisponible(Llibre llibre) {
-        llibresDisponibles.add(llibre);
+    public String getDataImpressio() {
+        return dataImpressio;
+    }
+
+    public void setDataImpressio(String dataImpressio) {
+        this.dataImpressio = dataImpressio;
+    }
+
+    public int getQuantitatFulles() {
+        return quantitatFulles;
+    }
+
+    public void setQuantitatFulles(int quantitatFulles) {
+        this.quantitatFulles = quantitatFulles;
     }
 }
