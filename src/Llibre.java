@@ -3,10 +3,10 @@ import java.util.ArrayList;
 public class Llibre {
     private String titol;
     private String isbn;
-    private String[] autors;
-    private boolean disponibilitat;
+    private String autors;
+    protected boolean disponibilitat;
 
-    public Llibre(String titol, String isbn, String[] autors, boolean disponibilitat) {
+    public Llibre(String titol, String isbn, String autors, boolean disponibilitat) {
         this.titol = titol;
         this.isbn = isbn;
         this.autors = autors;
@@ -29,11 +29,11 @@ public class Llibre {
         this.isbn = isbn;
     }
 
-    public String[] getAutors() {
+    public String getAutors() {
         return autors;
     }
 
-    public void setAutors(String[] autors) {
+    public void setAutors(String autors) {
         this.autors = autors;
     }
 

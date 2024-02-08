@@ -5,7 +5,7 @@ public class LlibrePaper extends Llibre{
     private String dataImpressio;
     private int quantitatFulles;
 
-    public LlibrePaper(String titol, String isbn, String[] autors, boolean disponibilitat, String dataImpressio, int quantitatFulles) {
+    public LlibrePaper(String titol, String isbn, String autors, boolean disponibilitat, String dataImpressio, int quantitatFulles) {
         super(titol, isbn, autors, disponibilitat);
         this.dataImpressio = dataImpressio;
         this.quantitatFulles = quantitatFulles;
