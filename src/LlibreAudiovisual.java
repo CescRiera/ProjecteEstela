@@ -1,4 +1,8 @@
+import java.util.ArrayList;
+
 public class LlibreAudiovisual extends Llibre {
+
+    private ArrayList<Llibre> llibresDisponibleAudio;
     private String webSubministradora;
     private String empresaPropietariaWeb;
     private String identificadorWebRegistreMercantil;

@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Date;
 
 public class LlibrePaper extends Llibre{
     private String dataImpressio;

@@ -7,13 +7,11 @@ public class Web {
     private String telefon;
 
     public Web(String empresaWeb, String identRegMercantil, String domicilioSocial, String telefon) {
-
         this.empresaWeb = empresaWeb;
         this.identRegMercantil = identRegMercantil;
         this.domicilioSocial = domicilioSocial;
         this.telefon = telefon;
     }
-
     public void generateAudioBooks(Biblioteca biblioteca){
         ArrayList<LlibreAudiovisual> LlistaLlibresAudiovisuals = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
