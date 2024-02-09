@@ -3,11 +3,11 @@ import java.util.ArrayList;
 public class Generador {
 
 
-    public static void generatePaperBooks(Biblioteca biblioteca) {
-        ArrayList<LlibrePaper> LlistaLlibresPaper = new ArrayList<>();
+    public static ArrayList<Llibre> generatePaperBooks() {
+        ArrayList<Llibre> LlistaLlibres = new ArrayList<>();
 
         // Crear manualmente 5 libros de papel adicionales
-        LlibrePaper libro1 = new LlibrePaper(
+        Llibre libro1 = new LlibrePaper(
                 "El principito",
                 "9788373191726",
                 "Antoine de Saint-Exupéry",
@@ -15,9 +15,9 @@ public class Generador {
                 "01/01/1943",
                 96
         );
-        LlistaLlibresPaper.add(libro1);
+        LlistaLlibres.add(libro1);
 
-        LlibrePaper libro2 = new LlibrePaper(
+        Llibre libro2 = new LlibrePaper(
                 "Cien años de soledad",
                 "9786070720721",
                 "Gabriel García Márquez",
@@ -25,9 +25,9 @@ public class Generador {
                 "05/30/1967",
                 432
         );
-        LlistaLlibresPaper.add(libro2);
+        LlistaLlibres.add(libro2);
 
-        LlibrePaper libro3 = new LlibrePaper(
+        Llibre libro3 = new LlibrePaper(
                 "Harry Potter y la piedra filosofal",
                 "9788478884451",
                 "J.K. Rowling",
@@ -35,9 +35,9 @@ public class Generador {
                 "06/26/1997",
                 223
         );
-        LlistaLlibresPaper.add(libro3);
+        LlistaLlibres.add(libro3);
 
-        LlibrePaper libro4 = new LlibrePaper(
+        Llibre libro4 = new LlibrePaper(
                 "El alquimista",
                 "9780062511409",
                 "Paulo Coelho",
@@ -45,9 +45,9 @@ public class Generador {
                 "1988",
                 197
         );
-        LlistaLlibresPaper.add(libro4);
+        LlistaLlibres.add(libro4);
 
-        LlibrePaper libro5 = new LlibrePaper(
+        Llibre libro5 = new LlibrePaper(
                 "Don Quijote de la Mancha",
                 "9788424116933",
                 "Miguel de Cervantes",
@@ -55,9 +55,8 @@ public class Generador {
                 "1605",
                 863
         );
-        LlistaLlibresPaper.add(libro5);
-
-        biblioteca.setLlistaLlibresPaper(LlistaLlibresPaper);
+        LlistaLlibres.add(libro5);
+        return LlistaLlibres;
     }
 
     public static void generateVinylRecords(Biblioteca biblioteca) {

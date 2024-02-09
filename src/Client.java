@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class Client {
+public abstract class Client {
     private String dni;
     private String nom;
     private String cognom;
@@ -20,7 +20,7 @@ public class Client {
         this.email = email;
         this.tipusClient = tipusClient;
 
-        //this.llistaLlibres = listaLlibres;
+        this.llistaLlibres = Generador.generatePaperBooks();
     }
 
     public void imprimirLlibres(){
