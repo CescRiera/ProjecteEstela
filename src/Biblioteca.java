@@ -1,15 +1,14 @@
-import java.io.Console;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 class Biblioteca {
-    private static Usuario usuarioActual;
-    private static ArrayList<LlibreAudiovisual> LlistaLlibresAudiovisuals;
-    private static ArrayList<LlibrePaper> LlistaLlibresPaper;
-    private static ArrayList<Usuario> LlistaUsuarios;
-    private static ArrayList<Client> LlistaClients;
-    private static Web web;
-    private static Scanner scanner;
+    private Usuario usuarioActual;
+    private ArrayList<LlibreAudiovisual> LlistaLlibresAudiovisuals;
+    private ArrayList<LlibrePaper> LlistaLlibresPaper;
+    private ArrayList<Vinilo> LlistaVinilo;
+    private ArrayList<Client> LlistaClients;
+    private Web web;
+    private Scanner scanner;
 
     public Biblioteca() {
         scanner = new Scanner(System.in);
@@ -27,6 +26,15 @@ class Biblioteca {
         LlistaLlibresAudiovisuals = llistaLlibresAudiovisuals;
     }
 
+    public ArrayList<Vinilo> getLlistaVinilo() {
+        return LlistaVinilo;
+    }
+
+    public void setLlistaVinilo(ArrayList<Vinilo> llistaVinilo) {
+        LlistaVinilo = llistaVinilo;
+    }
+
+    public ArrayList<LlibrePaper> getLlistaLlibresPaper() {
     public static ArrayList<LlibrePaper> getLlistaLlibresPaper() {
         return LlistaLlibresPaper;
     }

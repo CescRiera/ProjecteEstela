@@ -9,7 +9,7 @@ public class Llibre {
     private Date dataIniciPrestec;
     private Date dataDevolucio;
 
-    public Llibre(String titol, String isbn, String[] autors, boolean disponibilitat) {
+    public Llibre(String titol, String isbn, String autors, boolean disponibilitat) {
         this.titol = titol;
         this.isbn = isbn;
         this.autors = autors;
@@ -32,11 +32,11 @@ public class Llibre {
         this.isbn = isbn;
     }
 
-    public String[] getAutors() {
+    public String getAutors() {
         return autors;
     }
 
-    public void setAutors(String[] autors) {
+    public void setAutors(String autors) {
         this.autors = autors;
     }
 
