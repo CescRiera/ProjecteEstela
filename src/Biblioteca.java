@@ -58,9 +58,9 @@ class Biblioteca {
         listaUsuarios.add(new Treballador("usuario2", "pass456", "Usuario2", "Apellido2", "56789012Z", "987654321", "Calle Usuario 2"));
 
         List<Client> llistaClients = new ArrayList<>();
-        llistaClients.add(new ClientEscola("123", "Juan", "Pérez", "juan@gmail.com", "Premium"));
-        llistaClients.add(new ClientPrivat("87654321Y", "Ana", "Gómez", "ana@gmail.com", "Básico"));
-        llistaClients.add(new ClientPrivat("56789012Z", "Carlos", "Martínez", "carlos@gmail.com", "Premium"));
+        //llistaClients.add(new ClientEscola("123", "Juan", "Pérez", "juan@gmail.com", "Premium"));
+        llistaClients.add(new ClientPrivat("123", "Ana", "Gómez", "ana@gmail.com"));
+        llistaClients.add(new ClientPrivat("56789012Z", "Carlos", "Martínez", "carlos@gmail.com"));
 
         Scanner scanner = new Scanner(System.in);
 
@@ -78,9 +78,7 @@ class Biblioteca {
             Client c = buscarClientDni(llistaClients, idU);
 
             if (c != null) {
-                System.out.println("Cliente ID: " + c.getDni() + "\tNombre: " + c.getNom() + "\nEmail: " + c.getEmail() +
-                        "\tTipo de Cliente: " + c.imprimirInformacion() + "\n\nLibros en posesión:");
-                c.imprimirLlibres();
+                c.menu();
             } else {
                 // ¿Qué deberías hacer en caso de que el cliente no sea encontrado?
                 // Puedes agregar un mensaje aquí o realizar alguna acción adicional.

@@ -119,4 +119,32 @@ public class Generador {
 
         return clientes;
     }
+
+    public static ArrayList<LlibreAudiovisual> generateAudioBooks() {
+        ArrayList<LlibreAudiovisual> llistaLlibresAudiovisuals = new ArrayList<>();
+
+        Web web = new Web("Peliculones.com", "3752524", "Gran de Sagrera 777", "35725837");
+
+        LlibreAudiovisual libro1 = new LlibreAudiovisual(
+                "El principito",
+                "9788373191726",
+                "Antoine de Saint-Exupéry",
+                true,
+                web // Pasando la instancia de la clase Web
+        );
+        llistaLlibresAudiovisuals.add(libro1);
+
+        LlibreAudiovisual libro2 = new LlibreAudiovisual(
+                "Cien años de soledad",
+                "9786070720721",
+                "Gabriel García Márquez",
+                true,
+                web
+        );
+        llistaLlibresAudiovisuals.add(libro2);
+
+        return llistaLlibresAudiovisuals;
+    }
+
+
 }

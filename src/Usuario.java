@@ -51,7 +51,7 @@ abstract class Usuario {
     public String getDireccion() {
         return direccion;
     }
-
+/**
     public void Prestar(Client client,LlibrePaper llibre){
         if(client.getProducteEnPrestec() == null && llibre.isDisponibilitat()){
             llibre.setDisponibilitat(false);
@@ -77,6 +77,7 @@ abstract class Usuario {
             System.out.println("El llibre ha sigut retornat");
         }
     }
+ **/
 
     public String getContrasena() {
         return this.contrasenya;

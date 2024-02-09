@@ -1,44 +1,26 @@
+import java.beans.JavaBean;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public abstract class Client {
+abstract class Client {
     private String dni;
     private String nom;
     private String cognom;
     private String email;
-    private String tipusClient;
-    private List<Llibre> llistaLlibres;
-    private Llibre producteEnPrestec;
-    private Date dataIniciPrestec;
-    private Date dataDevolucio;
+    //private Date dataIniciPrestec;
+    //private Date dataDevolucio;
+    public abstract void menu();
 
-    public Client(String dni, String nom, String cognom, String email, String tipusClient) {
+    public Client(String dni, String nom, String cognom, String emailW) {
         this.dni = dni;
         this.nom = nom;
         this.cognom = cognom;
         this.email = email;
-        this.tipusClient = tipusClient;
-
-        this.llistaLlibres = Generador.generatePaperBooks();
+        //this.dataIniciPrestec = dataIniciPrestec;
+        //this.dataDevolucio = dataDevolucio;
     }
 
-    public void imprimirLlibres(){
-        int i = 1 ;
-        for (Llibre l : llistaLlibres) {
-            System.out.println("Llibre["+i+"]\tTitol :"+l.getTitol()+"\tISBN: "+l.getIsbn()); i++;
-        }
-    }
-
-    public String imprimirInformacion() {
-        return "";
-    }
-    public void setLlistaLlibres(List<Llibre> l){
-        this.llistaLlibres = l;
-    }
-    public List<Llibre> getLlistaLlibres(){
-        return this.llistaLlibres;
-    }
     public String getDni() {
         return dni;
     }
@@ -70,37 +52,4 @@ public abstract class Client {
     public void setEmail(String email) {
         this.email = email;
     }
-
-    public String getTipusClient() {
-        return tipusClient;
-    }
-
-    public void setTipusClient(String tipusClient) {
-        this.tipusClient = tipusClient;
-    }
-
-    public Llibre getProducteEnPrestec() {
-        return producteEnPrestec;
-    }
-
-    public void setProducteEnPrestec(Llibre producteEnPrestec) {
-        this.producteEnPrestec = producteEnPrestec;
-    }
-
-    public Date getDataIniciPrestec() {
-        return dataIniciPrestec;
-    }
-
-    public void setDataIniciPrestec(Date dataIniciPrestec) {
-        this.dataIniciPrestec = dataIniciPrestec;
-    }
-
-    public Date getDataDevolucio() {
-        return dataDevolucio;
-    }
-
-    public void setDataDevolucio(Date dataDevolucio) {
-        this.dataDevolucio = dataDevolucio;
-    }
-
 }

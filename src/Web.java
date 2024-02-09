@@ -13,28 +13,4 @@ public class Web {
         this.telefon = telefon;
     }
 
-    public ArrayList<LlibreAudiovisual> generateAudioBooks() {
-        ArrayList<LlibreAudiovisual> llistaLlibresAudiovisuals = new ArrayList<>();
-
-        LlibreAudiovisual libro1 = new LlibreAudiovisual(
-                "El principito",
-                "9788373191726",
-                "Antoine de Saint-Exupéry",
-                true,
-                this // Pasando la instancia de la clase Web
-        );
-        llistaLlibresAudiovisuals.add(libro1);
-
-        LlibreAudiovisual libro2 = new LlibreAudiovisual(
-                "Cien años de soledad",
-                "9786070720721",
-                "Gabriel García Márquez",
-                true,
-                this
-        );
-        llistaLlibresAudiovisuals.add(libro2);
-
-        return llistaLlibresAudiovisuals;
-    }
-
 }

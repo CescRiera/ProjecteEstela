@@ -1,10 +1,14 @@
+import java.util.Date;
+
 public class ClientEscola extends Client {
-    public ClientEscola(String dni, String nom, String cognom, String email, String tipusClient) {
-        super(dni, nom, cognom, email, tipusClient);
+    public ClientEscola(String dni, String nom, String cognom, String email) {
+        super(dni, nom, cognom, email);
     }
 
-    @Override
-    public String imprimirInformacion() {
-        return "Escola";
+    public void menu(){
+
     }
+
 }
+
+
