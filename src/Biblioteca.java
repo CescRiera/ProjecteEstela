@@ -1,45 +1,45 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+
 class Biblioteca {
-    private Usuario usuarioActual;
-    private ArrayList<LlibreAudiovisual> LlistaLlibresAudiovisuals;
-    private ArrayList<LlibrePaper> LlistaLlibresPaper;
-    private ArrayList<Vinilo> LlistaVinilo;
-    private ArrayList<Client> LlistaClients;
-    private Web web;
-    private Scanner scanner;
+    private static Usuario usuarioActual;
+    private static ArrayList<LlibreAudiovisual> LlistaLlibresAudiovisuals;
+    private static ArrayList<LlibrePaper> LlistaLlibresPaper;
+    private static ArrayList<Vinilo> LlistaVinilo;
+    private static ArrayList<Client> LlistaClients;
+    private static Web web;
+    private static Scanner scanner;
 
     public Biblioteca() {
         scanner = new Scanner(System.in);
     }
 
-    public ArrayList<LlibreAudiovisual> getLlistaLlibresAudiovisuals() {
+    public static ArrayList<LlibreAudiovisual> getLlistaLlibresAudiovisuals() {
         return LlistaLlibresAudiovisuals;
     }
 
-    public static void init(){
+    public static void init() {
         login();
-
     }
-    public void setLlistaLlibresAudiovisuals(ArrayList<LlibreAudiovisual> llistaLlibresAudiovisuals) {
+
+    public static void setLlistaLlibresAudiovisuals(ArrayList<LlibreAudiovisual> llistaLlibresAudiovisuals) {
         LlistaLlibresAudiovisuals = llistaLlibresAudiovisuals;
     }
 
-    public ArrayList<Vinilo> getLlistaVinilo() {
+    public static ArrayList<Vinilo> getLlistaVinilo() {
         return LlistaVinilo;
     }
 
-    public void setLlistaVinilo(ArrayList<Vinilo> llistaVinilo) {
+    public static void setLlistaVinilo(ArrayList<Vinilo> llistaVinilo) {
         LlistaVinilo = llistaVinilo;
     }
 
-    public ArrayList<LlibrePaper> getLlistaLlibresPaper() {
     public static ArrayList<LlibrePaper> getLlistaLlibresPaper() {
         return LlistaLlibresPaper;
     }
 
-    public void setLlistaLlibresPaper(ArrayList<LlibrePaper> llistaLlibresPaper) {
+    public static void setLlistaLlibresPaper(ArrayList<LlibrePaper> llistaLlibresPaper) {
         LlistaLlibresPaper = llistaLlibresPaper;
     }
 
@@ -47,7 +47,7 @@ class Biblioteca {
         return LlistaClients;
     }
 
-    public void setLlistaClients(ArrayList<Client> llistaClients) {
+    public static void setLlistaClients(ArrayList<Client> llistaClients) {
         LlistaClients = llistaClients;
     }
 
@@ -62,7 +62,6 @@ class Biblioteca {
         llistaClients.add(new ClientPrivat("87654321Y", "Ana", "Gómez", "ana@gmail.com", "Básico"));
         llistaClients.add(new ClientPrivat("56789012Z", "Carlos", "Martínez", "carlos@gmail.com", "Premium"));
 
-
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Ingrese su nombre: ");
@@ -74,18 +73,18 @@ class Biblioteca {
 
         if (usuarioAutenticado != null) {
 
-            System.out.print("Introduzca Dni Cliente:");
-            String idU  = scanner.nextLine();
-            Client c = buscarClientDni(llistaClients,idU); // Cambiar por el generador
+            System.out.print("Introduzca DNI Cliente:");
+            String idU = scanner.nextLine();
+            Client c = buscarClientDni(llistaClients, idU);
 
-            if (c!=null){
-
-                System.out.println("Client ID: "+c.getDni()+"\tNom: "+c.getNom()+"\nEmail: "+c.getEmail()+"\tTipus de Client: "+c.imprimirInformacion()+"\n\nLlibres en posesió:");
+            if (c != null) {
+                System.out.println("Cliente ID: " + c.getDni() + "\tNombre: " + c.getNom() + "\nEmail: " + c.getEmail() +
+                        "\tTipo de Cliente: " + c.imprimirInformacion() + "\n\nLibros en posesión:");
                 c.imprimirLlibres();
-                //usuarioAutenticado.menu();
-
-            }else{
-
+            } else {
+                // ¿Qué deberías hacer en caso de que el cliente no sea encontrado?
+                // Puedes agregar un mensaje aquí o realizar alguna acción adicional.
+                System.out.println("Cliente no encontrado.");
             }
 
         } else {
@@ -93,9 +92,9 @@ class Biblioteca {
         }
     }
 
-    private static Client buscarClientDni(List<Client> llistaclient, String nombre) {
+    private static Client buscarClientDni(List<Client> llistaclient, String dni) {
         for (Client client : llistaclient) {
-            if (client.getDni().equals(nombre)) {
+            if (client.getDni().equals(dni)) {
                 return client;
             }
         }
@@ -111,55 +110,22 @@ class Biblioteca {
         return null; // Usuario no encontrado
     }
 
-
-
     private static void menuAdmin() {
-
-        while (true){
+        while (true) {
             mostrarInformacionUsuario();
-            System.out.println("BIENVEBENIDO A LA BIBLIOTECA NACIONONAL DE LA COCAAcceso total a las características de la biblioteca.");
-            System.out.println("Escull un número: \n" +
-                    "1. Prestar\n"+
-                    "2. Retornar\n"+
-                    "3. Sortir\n");
+            System.out.println("BIENVENIDO A LA BIBLIOTECA NACIONAL DE LA COCA - Acceso total a las características de la biblioteca.");
+            System.out.println("Escoge un número: \n" +
+                    "1. Prestar\n" +
+                    "2. Retornar\n" +
+                    "3. Salir\n");
+
             int opcioEscollida = scanner.nextInt();
-            if (opcioEscollida ==1){
-                System.out.println("DNI: ");
-                String dni = scanner.nextLine();
-                dni = scanner.nextLine();
-                System.out.println("Nom: ");
-                String nom = scanner.nextLine();
-                System.out.println("Cognom: ");
-                String cognom = scanner.nextLine();
-                System.out.println("Gmail: ");
-                String gmail = scanner.nextLine();
-                System.out.println("Tipus de client: ");
-                String tipusClient = scanner.nextLine();
-                Client client1 = new Client(dni,nom,cognom,gmail,tipusClient);
-                usuarioActual.Prestar(client1, getLlistaLlibresPaper().get(1));
+            scanner.nextLine(); // Consumir la nueva línea después de nextInt()
 
-                // LA LINIA DE SOTA DONA ERROR DONA ERROR
-
-                //LlistaClients.add(client1);
-
-            }else if(opcioEscollida == 2){
-                System.out.println("DNI: ");
-                String dni = scanner.nextLine();
-                dni = scanner.nextLine();
-                System.out.println("ISBN: ");
-                String isbn = scanner.nextLine();
-                LlibrePaper llibreRetornar = null;
-                for (int i = 0; i<getLlistaLlibresPaper().size();i++){
-                    if(getLlistaLlibresPaper().get(i).getIsbn()==isbn){
-                        llibreRetornar = getLlistaLlibresPaper().get(i);
-                    }
-                }
-                for(int i = 0; i<getLlistaClients().size();i++){
-                    if(getLlistaClients().get(i).getDni() == dni){
-
-                        usuarioActual.Retornar(getLlistaClients().get(i),llibreRetornar);
-                    }
-                }
+            if (opcioEscollida == 1) {
+                // Implementar la lógica para prestar libros
+            } else if (opcioEscollida == 2) {
+                // Implementar la lógica para retornar libros
             } else if (opcioEscollida == 3) {
                 break;
             }
@@ -167,10 +133,9 @@ class Biblioteca {
     }
 
     private static void menuTreballador() {
-        // Implementar menú para el usuario treballador aquí
         mostrarInformacionUsuario();
         System.out.println("Acceso a la gestión de préstamos de la biblioteca.");
-
+        // Implementar menú para el usuario treballador aquí
     }
 
     private static void mostrarInformacionUsuario() {

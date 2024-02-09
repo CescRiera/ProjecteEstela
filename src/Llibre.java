@@ -4,7 +4,8 @@ import java.util.Date;
 public class Llibre {
     private String titol;
     private String isbn;
-    private String[] autors;
+    private String autor;
+    private Client c;
     private boolean disponibilitat;
     private Date dataIniciPrestec;
     private Date dataDevolucio;
@@ -12,7 +13,7 @@ public class Llibre {
     public Llibre(String titol, String isbn, String autors, boolean disponibilitat) {
         this.titol = titol;
         this.isbn = isbn;
-        this.autors = autors;
+        this.autor = autors;
         this.disponibilitat = disponibilitat;
     }
 
@@ -33,11 +34,11 @@ public class Llibre {
     }
 
     public String getAutors() {
-        return autors;
+        return autor;
     }
 
     public void setAutors(String autors) {
-        this.autors = autors;
+        this.autor = autors;
     }
 
     public boolean isDisponibilitat() {

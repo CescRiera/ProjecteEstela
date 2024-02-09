@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Generador {
 
 
-    public void generatePaperBooks(Biblioteca biblioteca) {
+    public static void generatePaperBooks(Biblioteca biblioteca) {
         ArrayList<LlibrePaper> LlistaLlibresPaper = new ArrayList<>();
 
         // Crear manualmente 5 libros de papel adicionales
@@ -60,7 +60,7 @@ public class Generador {
         biblioteca.setLlistaLlibresPaper(LlistaLlibresPaper);
     }
 
-    public void generateVinylRecords(Biblioteca biblioteca) {
+    public static void generateVinylRecords(Biblioteca biblioteca) {
         ArrayList<Vinilo> llistaVinilos = new ArrayList<>();
 
         // Crear manualmente 5 vinilos adicionales
@@ -106,4 +106,6 @@ public class Generador {
 
         biblioteca.setLlistaVinilo(llistaVinilos);
     }
+
+
 }

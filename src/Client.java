@@ -20,19 +20,7 @@ public class Client {
         this.email = email;
         this.tipusClient = tipusClient;
 
-        Llibre llibre1 = new Llibre("El señor de los anillos", "978-84-450-7709-6", new String[]{"J.R.R. Tolkien"}, true);
-        Llibre llibre2 = new Llibre("Cien años de soledad", "978-84-376-0154-5", new String[]{"Gabriel García Márquez"}, true);
-        Llibre llibre3 = new Llibre("1984", "978-84-9759-563-5", new String[]{"George Orwell"}, false);
-        Llibre llibre4 = new Llibre("Harry Potter y la piedra filosofal", "978-84-9838-518-5", new String[]{"J.K. Rowling"}, true);
-        Llibre llibre5 = new Llibre("Don Quijote de la Mancha", "978-84-7908-406-3", new String[]{"Miguel de Cervantes"}, true);
-
-        ArrayList<Llibre> listaLlibres = new ArrayList<>();
-        listaLlibres.add(llibre1);
-        listaLlibres.add(llibre2);
-        listaLlibres.add(llibre3);
-        listaLlibres.add(llibre4);
-        listaLlibres.add(llibre5);
-        this.llistaLlibres = listaLlibres;
+        //this.llistaLlibres = listaLlibres;
     }
 
     public void imprimirLlibres(){

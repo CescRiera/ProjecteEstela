@@ -2,24 +2,6 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        Biblioteca biblioteca = new Biblioteca();
-        Web web = new Web("Llibres.Inc","34343","Carrer Almeria 34","678324590");
-        ArrayList<LlibreAudiovisual> llistaLlibres = web.generateAudioBooks();
-        for (LlibreAudiovisual libro : llistaLlibres) {
-            System.out.println("Título: " + libro.getTitol());
-            System.out.println("ISBN: " + libro.getIsbn());
-            System.out.println("Autor: " + libro.getAutors());
-            System.out.println("Disponible: " + (libro.isDisponibilitat() ? "Sí" : "No"));
-            System.out.println("Empresa Web: " + libro.getWeb().empresaWeb);
-            System.out.println("identRegMercantil: " + libro.getWeb().identRegMercantil);
-            System.out.println("TelefonoEmpresa: " + libro.getWeb().telefon);
-            System.out.println("Empresa Web: " + libro.getWeb().domicilioSocial);
-            System.out.println("-------------------------------------");
-        }
-
-        System.out.println(biblioteca.getLlistaLlibresAudiovisuals());
-
-        biblioteca.login();
 
         Biblioteca.login();
     }
