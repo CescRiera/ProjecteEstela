@@ -1,8 +1,6 @@
 import java.util.ArrayList;
 
 public class Generador {
-
-
     public static ArrayList<Llibre> generatePaperBooks() {
         ArrayList<Llibre> LlistaLlibres = new ArrayList<>();
 
@@ -59,7 +57,7 @@ public class Generador {
         return LlistaLlibres;
     }
 
-    public static void generateVinylRecords(Biblioteca biblioteca) {
+    public static ArrayList<Vinilo> generateVinylRecords() {
         ArrayList<Vinilo> llistaVinilos = new ArrayList<>();
 
         // Crear manualmente 5 vinilos adicionales
@@ -103,8 +101,22 @@ public class Generador {
         );
         llistaVinilos.add(vinilo5);
 
-        biblioteca.setLlistaVinilo(llistaVinilos);
+        return llistaVinilos;
     }
+    public static ArrayList<Client> generarClients(){
+        ArrayList<Client> clientes = new ArrayList<>();
 
+        for (int i = 0; i < 7; i++) {
+            clientes.add(new ClientPrivat("DNI" + i, "Nom" + i, "Cognom" + i, "email" + i + "@example.com"));
+        }
 
+        // Crear 5 instancias de ClientEscola
+        for (int i = 0; i < 7; i++) {
+            clientes.add(new ClientEscola("DNI-Escola" + i, "NomEscola" + i, "CognomEscola" + i, "escola" + i + "@example.com"));
+        }
+
+        clientes.add(new ClientPrivat("123","Didac","Gay","tonto@lol.lol"));
+
+        return clientes;
+    }
 }
