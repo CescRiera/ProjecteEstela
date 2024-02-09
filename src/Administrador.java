@@ -3,5 +3,8 @@ public class Administrador extends Usuario{
         super(usuario, contrasenya, nombre, apellido, dni, telefono, direccion);
     }
 
+    public Administrador(String usuario, String contrasenya){
+        super(usuario,contrasenya);
+    }
 
 }

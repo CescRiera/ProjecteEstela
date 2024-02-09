@@ -1,10 +1,13 @@
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Llibre {
     private String titol;
     private String isbn;
     private String[] autors;
     private boolean disponibilitat;
+    private Date dataIniciPrestec;
+    private Date dataDevolucio;
 
     public Llibre(String titol, String isbn, String[] autors, boolean disponibilitat) {
         this.titol = titol;

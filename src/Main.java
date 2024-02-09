@@ -2,11 +2,8 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        Biblioteca biblioteca = new Biblioteca();
-        generateBooks(biblioteca);
-        Web web = new Web("Llibres.Inc","34343","Carrer Almeria 34","678324590");
-        web.generateAudioBooks(biblioteca);
-        biblioteca.login();
+
+        Biblioteca.login();
     }
     public static void generateBooks(Biblioteca biblioteca) {
         ArrayList<LlibrePaper> LlistaLlibresPaper = new ArrayList<>();

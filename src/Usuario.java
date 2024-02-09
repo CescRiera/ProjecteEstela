@@ -1,5 +1,6 @@
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Scanner;
 
 abstract class Usuario {
     private String usuario;
@@ -19,7 +20,10 @@ abstract class Usuario {
         this.telefono = telefono;
         this.direccion = direccion;
     }
-
+    public Usuario(String usuario, String contrasenya){
+        this.usuario = usuario;
+        this.contrasenya = contrasenya;
+    }
     public String getUsuario() {
         return usuario;
     }
@@ -74,4 +78,18 @@ abstract class Usuario {
         }
     }
 
+    public String getContrasena() {
+        return this.contrasenya;
+    }
+
+
+    public void login() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Introduzca ID Usuario:");
+        String idU  = scanner.nextLine();
+
+    }
+    public void menu(Client c) {
+
+    }
 }
