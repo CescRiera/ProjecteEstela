@@ -11,18 +11,16 @@ public class Main {
         Biblioteca.setLlistaLlibresPaper(Generador.generatePaperBooks());
         biblioteca.setLlistaLlibresAudiovisuals(Generador.generateAudioBooks());
         Biblioteca.setLlistaVinilo(Generador.generateVinylRecords());
-        List<Client> llistaClients = new ArrayList<>();
-        llistaClients.add(new ClientPrivat("123", "Ana", "Gómez", "ana@gmail.com"));
-        llistaClients.add(new ClientPrivat("56789012Z", "Carlos", "Martínez", "carlos@gmail.com"));
+        Biblioteca.setLlistaClients(Generador.generarClients());
         Scanner scanner = new Scanner(System.in);
         while (true){
-            menu.login(biblioteca,llistaClients);
+            menu.login(biblioteca);
             System.out.println("Desitja fer una altre consulta?\n" +
                     "1. Si\n" +
                     "2. No\n");
             int opcio = scanner.nextInt();
             if(opcio == 1){
-                menu.login(biblioteca,llistaClients);
+                menu.login(biblioteca);
             } else if (opcio == 2) {
                 break;
             }else {
@@ -30,5 +28,4 @@ public class Main {
             }
         }
     }
-
 }

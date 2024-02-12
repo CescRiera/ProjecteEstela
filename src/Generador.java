@@ -66,7 +66,8 @@ public class Generador {
                 45,
                 "Abbey Road",
                 1969,
-                "9786070720722"
+                "9786075720722",
+                true
         );
         llistaVinilos.add(vinilo1);
 
@@ -75,7 +76,8 @@ public class Generador {
                 42,
                 "The Dark Side of the Moon",
                 1973,
-                "9786070720723"
+                "9786075720723",
+                true
         );
         llistaVinilos.add(vinilo2);
 
@@ -84,7 +86,8 @@ public class Generador {
                 40,
                 "Led Zeppelin IV",
                 1971,
-                "9786070720724"
+                "9786073720724",
+                true
         );
         llistaVinilos.add(vinilo3);
 
@@ -93,7 +96,8 @@ public class Generador {
                 36,
                 "Highway 61 Revisited",
                 1965,
-                "9786070720725"
+                "9784070720725",
+                true
         );
         llistaVinilos.add(vinilo4);
 
@@ -102,7 +106,8 @@ public class Generador {
                 38,
                 "Exile on Main St.",
                 1972,
-                "9786070720726"
+                "9781070720726",
+                true
         );
         llistaVinilos.add(vinilo5);
 

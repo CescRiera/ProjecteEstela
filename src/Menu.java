@@ -17,7 +17,7 @@ public class Menu {
         this.usuarioAutenticado = usuarioAutenticado;
     }
 
-    public void login(Biblioteca b,List<Client> llistaClients) {
+    public void login(Biblioteca b) {
         ListaEspera listaEspera = new ListaEspera();;
 
         List<Usuario> listaUsuarios = new ArrayList<>();
@@ -36,7 +36,7 @@ public class Menu {
 
             System.out.print("Introduzca DNI Cliente:");
             String idU = scanner.nextLine();
-            Client c = buscarClientDni(llistaClients, idU);
+            Client c = buscarClientDni(b.getLlistaClients(), idU);
 
             if (c != null) {
                 c.menu();
@@ -47,26 +47,19 @@ public class Menu {
                         "2. Retornar\t" +
                         "3. Afegir a llista d'espera");
                 int opcio = scanner.nextInt();
-                Llibre libroSeleccionado = buscarLlibrePorISBN(b.getLlistaLlibresAudiovisuals(), isbn);
-                if (libroSeleccionado != null) {
-                    // Si se encuentra un libro con el ISBN dado
-                    switch (opcio) {
-                        case 1:
-                            usuarioAutenticado.Prestar(c,b,isbn);
-                            break;
-                        case 2:
-                            usuarioAutenticado.Retornar(c,b,isbn);
-                            break;
-                        case 3:
-                            listaEspera.añadirCliente(c);
-                            break;
-                        default:
-                            System.out.println("Opción no válida.");
-                            break;
-                    }
-                } else {
-                    // Si no se encuentra ningún libro con el ISBN dado
-                    System.out.println("ISBN incorrecto. Inténtelo de nuevo.");
+                switch (opcio) {
+                    case 1:
+                        usuarioAutenticado.Prestar(c,b,isbn);
+                        break;
+                    case 2:
+                        usuarioAutenticado.Retornar(c,b,isbn);
+                        break;
+                    case 3:
+                        listaEspera.añadirCliente(c);
+                        break;
+                    default:
+                        System.out.println("Opción no válida.");
+                        break;
                 }
             } else {
                 // ¿Qué deberías hacer en caso de que el cliente no sea encontrado?

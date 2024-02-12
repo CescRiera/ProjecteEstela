@@ -19,10 +19,6 @@ public class Biblioteca {
         return LlistaLlibresAudiovisuals;
     }
 
-    public static void init() {
-        login();
-    }
-
     public void setLlistaLlibresAudiovisuals(ArrayList<LlibreAudiovisual> llistaLlibresAudiovisuals) {
         LlistaLlibresAudiovisuals = llistaLlibresAudiovisuals;
     }
@@ -50,75 +46,6 @@ public class Biblioteca {
     public static void setLlistaClients(ArrayList<Client> llistaClients) {
         LlistaClients = llistaClients;
     }
-
-    public static void login() {
-        ListaEspera listaEspera = new ListaEspera();
-        ArrayList<LlibreAudiovisual> audiolibros = Generador.generateAudioBooks();
-
-        LlistaLlibresPaper = Generador.generatePaperBooks();
-        LlistaLlibresAudiovisuals = Generador.generateAudioBooks();
-        LlistaVinilo = Generador.generateVinylRecords();
-        LlistaClients = Generador.generarClients();
-
-        List<Usuario> listaUsuarios = new ArrayList<>();
-        listaUsuarios.add(new Administrador("admin", "admin", "Admin", "Root", "12345678X", "123456789", "Calle Admin 123"));
-        listaUsuarios.add(new Treballador("usuario1", "pass123", "Usuario1", "Apellido1", "87654321Y", "987654321", "Calle Usuario 1"));
-        listaUsuarios.add(new Treballador("usuario2", "pass456", "Usuario2", "Apellido2", "56789012Z", "987654321", "Calle Usuario 2"));
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.print("Ingrese su nombre: ");
-        String nombre = scanner.nextLine();
-        System.out.print("Ingrese su contraseña: ");
-        String contrasena = scanner.nextLine();
-
-        Usuario usuarioAutenticado = autenticarUsuario(listaUsuarios, nombre, contrasena);
-
-        if (usuarioAutenticado != null) {
-
-            System.out.print("Introduzca DNI Cliente:");
-            String idU = scanner.nextLine();
-            Client c = buscarClientDni(LlistaClients, idU);
-
-            if (c != null) {
-                c.menu();
-                System.out.print("Escriba el ISBN del libro que desea reservar: ");
-                String isbn = scanner.nextLine();
-                Llibre libroSeleccionado = buscarLlibrePorISBN(audiolibros, isbn);
-                if (libroSeleccionado != null) {
-                    // Si se encuentra un libro con el ISBN dado
-                    switch (isbn) {
-                        case "Prestar":
-                            // Opción 1: Prestar el libro
-                            break;
-                        case "Retornar":
-                            // Opción 2: Retornar el libro
-                            break;
-                        case "Devolver":
-                            // Opción 3: Devolver el libro
-                            break;
-                        case "Añadir a lista de Espera":
-                            // Opción 4: Añadir a lista de espera
-                            listaEspera.añadirCliente(c);
-                            break;
-                        default:
-                            System.out.println("Opción no válida.");
-                            break;
-                    }
-                } else {
-                    // Si no se encuentra ningún libro con el ISBN dado
-                    System.out.println("ISBN incorrecto. Inténtelo de nuevo.");
-                }
-            } else {
-                // ¿Qué deberías hacer en caso de que el cliente no sea encontrado?
-                // Puedes agregar un mensaje aquí o realizar alguna acción adicional.
-                System.out.println("Cliente no encontrado.");
-            }
-
-        } else {
-            System.out.println("Autenticación fallida. Usuario no encontrado.");
-        }
-    }
-
     private static Client buscarClientDni(List<Client> llistaclient, String dni) {
         for (Client client : llistaclient) {
             if (client.getDni().equals(dni)) {

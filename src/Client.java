@@ -13,16 +13,13 @@ abstract class Client {
     private  LlibrePaper llibrePaperEnPrestec;
     private  LlibreAudiovisual llibreAudiovisualEnPrestec;
     private Vinilo viniloEnPrestec;
-
-
-
     private String llibreesperat;
 
     //private Date dataIniciPrestec;
     //private Date dataDevolucio;
     public abstract void menu();
 
-    public Client(String dni, String nom, String cognom, String emailW) {
+    public Client(String dni, String nom, String cognom, String email) {
         this.dni = dni;
         this.nom = nom;
         this.cognom = cognom;

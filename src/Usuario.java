@@ -89,6 +89,25 @@ abstract class Usuario {
                     }
                 }
             }
+
+            for(int i = 0; i<biblioteca.getLlistaVinilo().size();i++){
+                if(Objects.equals(biblioteca.getLlistaVinilo().get(i).getIsbn(), isbn)){
+                    if(client.getViniloEnPrestec() == null && biblioteca.getLlistaVinilo().get(i).isViniloDisponible()){
+                        biblioteca.getLlistaVinilo().get(i).setViniloDisponible(false);
+                        client.setViniloEnPrestec(biblioteca.getLlistaVinilo().get(i));
+                        client.setDataIniciPrestec(new Date());
+                        Calendar calendar = Calendar.getInstance();
+                        calendar.setTime(client.getDataIniciPrestec());
+                        calendar.add(Calendar.MONTH,1);
+                        client.setDataDevolucio(calendar.getTime());
+                        System.out.println("El client te fins el "+client.getDataDevolucio()+" per retornar el Vinil");
+                    } else if (!biblioteca.getLlistaLlibresPaper().get(i).isDisponibilitat()) {
+                        System.out.println("El Vinil no es troba disponible");
+                    } else if (client.getLlibrePaperEnPrestec()!=null) {
+                        System.out.println("El client ja te un producte prestat");
+                    }
+                }
+            }
         }catch (Exception e){
             System.out.println(e);
         }
@@ -122,6 +141,23 @@ abstract class Usuario {
                 }
                 else{
                     System.out.println("error audio");
+                    System.out.println(biblioteca.getLlistaLlibresAudiovisuals().get(i).getIsbn());
+                    break;
+                }
+            }
+        }
+
+        for(int i = 0;i<biblioteca.getLlistaVinilo().size();i++){
+            if(Objects.equals(biblioteca.getLlistaVinilo().get(i).getIsbn(), isbn)){
+                if(client.getViniloEnPrestec()!=null){
+                    biblioteca.getLlistaVinilo().get(i).setViniloDisponible(true);
+                    client.setViniloEnPrestec(null);
+                    client.setDataIniciPrestec(null);
+                    client.setDataDevolucio(null);
+                    System.out.println("El Vinil ha sigut retornat");
+                }
+                else{
+                    System.out.println("error Vinil");
                     System.out.println(biblioteca.getLlistaLlibresAudiovisuals().get(i).getIsbn());
                     break;
                 }

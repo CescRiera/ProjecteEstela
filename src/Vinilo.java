@@ -3,15 +3,17 @@ public class Vinilo {
     private int durada;
     private String album;
     private int año;
+    private boolean viniloDisponible;
 
     private String isbn;
 
-    public Vinilo(String autor, int durada, String album, int año, String isbn) {
+    public Vinilo(String autor, int durada, String album, int año, String isbn, boolean viniloDisponible) {
         this.autor = autor;
         this.durada = durada;
         this.album = album;
         this.año = año;
         this.isbn = isbn;
+        this.viniloDisponible = viniloDisponible;
     }
 
     public String getAutor() {
@@ -48,5 +50,13 @@ public class Vinilo {
 
     public String getIsbn() {
         return isbn;
+    }
+
+    public boolean isViniloDisponible() {
+        return viniloDisponible;
+    }
+
+    public void setViniloDisponible(boolean viniloDisponible) {
+        this.viniloDisponible = viniloDisponible;
     }
 }
