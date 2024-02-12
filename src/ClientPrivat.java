@@ -18,7 +18,7 @@ public class ClientPrivat extends Client {
 
         // Imprimir información de todos los libros
         System.out.println("\nLibros de Papel :");
-        ArrayList<Llibre> librospapel = Generador.generatePaperBooks();
+        ArrayList<LlibrePaper> librospapel = Generador.generatePaperBooks();
         for (Llibre libro : librospapel) {
             System.out.println("Título: " + libro.getTitol());
             System.out.println("Autor: " + libro.getAutors());
@@ -28,7 +28,7 @@ public class ClientPrivat extends Client {
                 System.out.println("Fecha de publicación: " + ((LlibrePaper) libro).getDataImpressio());
                 System.out.println("Número de páginas: " + libroPaper.getQuantitatFulles());
             }
-            System.out.println(); // Salto de línea entre libros
+            System.out.println();
         }
         System.out.println("\nAudioLibros :");
         ArrayList<LlibreAudiovisual> audiolibros = Generador.generateAudioBooks();

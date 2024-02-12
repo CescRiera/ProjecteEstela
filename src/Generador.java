@@ -1,11 +1,11 @@
 import java.util.ArrayList;
 
 public class Generador {
-    public static ArrayList<Llibre> generatePaperBooks() {
-        ArrayList<Llibre> LlistaLlibres = new ArrayList<>();
+    public static ArrayList<LlibrePaper> generatePaperBooks() {
+        ArrayList<LlibrePaper> LlistaLlibres = new ArrayList<>();
 
         // Crear manualmente 5 libros de papel adicionales
-        Llibre libro1 = new LlibrePaper(
+        LlibrePaper libro1 = new LlibrePaper(
                 "El principito",
                 "9788373191726",
                 "Antoine de Saint-Exupéry",
@@ -15,7 +15,7 @@ public class Generador {
         );
         LlistaLlibres.add(libro1);
 
-        Llibre libro2 = new LlibrePaper(
+        LlibrePaper libro2 = new LlibrePaper(
                 "Cien años de soledad",
                 "9786070720721",
                 "Gabriel García Márquez",
@@ -25,7 +25,7 @@ public class Generador {
         );
         LlistaLlibres.add(libro2);
 
-        Llibre libro3 = new LlibrePaper(
+        LlibrePaper libro3 = new LlibrePaper(
                 "Harry Potter y la piedra filosofal",
                 "9788478884451",
                 "J.K. Rowling",
@@ -35,7 +35,7 @@ public class Generador {
         );
         LlistaLlibres.add(libro3);
 
-        Llibre libro4 = new LlibrePaper(
+        LlibrePaper libro4 = new LlibrePaper(
                 "El alquimista",
                 "9780062511409",
                 "Paulo Coelho",
@@ -45,7 +45,7 @@ public class Generador {
         );
         LlistaLlibres.add(libro4);
 
-        Llibre libro5 = new LlibrePaper(
+        LlibrePaper libro5 = new LlibrePaper(
                 "Don Quijote de la Mancha",
                 "9788424116933",
                 "Miguel de Cervantes",

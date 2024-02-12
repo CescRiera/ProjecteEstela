@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-class Biblioteca {
+public class Biblioteca {
     private static Usuario usuarioActual;
     private static ArrayList<LlibreAudiovisual> LlistaLlibresAudiovisuals;
     private static ArrayList<LlibrePaper> LlistaLlibresPaper;
@@ -15,7 +15,7 @@ class Biblioteca {
         scanner = new Scanner(System.in);
     }
 
-    public static ArrayList<LlibreAudiovisual> getLlistaLlibresAudiovisuals() {
+    public ArrayList<LlibreAudiovisual> getLlistaLlibresAudiovisuals() {
         return LlistaLlibresAudiovisuals;
     }
 
@@ -23,11 +23,11 @@ class Biblioteca {
         login();
     }
 
-    public static void setLlistaLlibresAudiovisuals(ArrayList<LlibreAudiovisual> llistaLlibresAudiovisuals) {
+    public void setLlistaLlibresAudiovisuals(ArrayList<LlibreAudiovisual> llistaLlibresAudiovisuals) {
         LlistaLlibresAudiovisuals = llistaLlibresAudiovisuals;
     }
 
-    public static ArrayList<Vinilo> getLlistaVinilo() {
+    public ArrayList<Vinilo> getLlistaVinilo() {
         return LlistaVinilo;
     }
 
@@ -35,7 +35,7 @@ class Biblioteca {
         LlistaVinilo = llistaVinilo;
     }
 
-    public static ArrayList<LlibrePaper> getLlistaLlibresPaper() {
+    public ArrayList<LlibrePaper> getLlistaLlibresPaper() {
         return LlistaLlibresPaper;
     }
 
@@ -55,12 +55,17 @@ class Biblioteca {
         ListaEspera listaEspera = new ListaEspera();
         ArrayList<LlibreAudiovisual> audiolibros = Generador.generateAudioBooks();
 
+        LlistaLlibresPaper = Generador.generatePaperBooks();
+        LlistaLlibresAudiovisuals = Generador.generateAudioBooks();
+        LlistaVinilo = Generador.generateVinylRecords();
+
         List<Usuario> listaUsuarios = new ArrayList<>();
         listaUsuarios.add(new Administrador("admin", "admin", "Admin", "Root", "12345678X", "123456789", "Calle Admin 123"));
         listaUsuarios.add(new Treballador("usuario1", "pass123", "Usuario1", "Apellido1", "87654321Y", "987654321", "Calle Usuario 1"));
         listaUsuarios.add(new Treballador("usuario2", "pass456", "Usuario2", "Apellido2", "56789012Z", "987654321", "Calle Usuario 2"));
 
         List<Client> llistaClients = new ArrayList<>();
+        //llistaClients.add(new ClientEscola("123", "Juan", "Pérez", "juan@gmail.com", "Premium"));
         llistaClients.add(new ClientPrivat("123", "Ana", "Gómez", "ana@gmail.com"));
         llistaClients.add(new ClientPrivat("56789012Z", "Carlos", "Martínez", "carlos@gmail.com"));
 
@@ -109,6 +114,8 @@ class Biblioteca {
                     System.out.println("ISBN incorrecto. Inténtelo de nuevo.");
                 }
             } else {
+                // ¿Qué deberías hacer en caso de que el cliente no sea encontrado?
+                // Puedes agregar un mensaje aquí o realizar alguna acción adicional.
                 System.out.println("Cliente no encontrado.");
             }
 

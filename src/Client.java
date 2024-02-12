@@ -8,6 +8,13 @@ abstract class Client {
     private String nom;
     private String cognom;
     private String email;
+    private Date dataIniciPrestec;
+    private Date dataDevolucio;
+    private  LlibrePaper llibrePaperEnPrestec;
+    private  LlibreAudiovisual llibreAudiovisualEnPrestec;
+    private Vinilo viniloEnPrestec;
+
+
 
     private String llibreesperat;
 
