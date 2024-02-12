@@ -7,7 +7,7 @@ public class Generador {
         // Crear manualmente 5 libros de papel adicionales
         LlibrePaper libro1 = new LlibrePaper(
                 "El principito",
-                "9788373191726",
+                "9788373191731",
                 "Antoine de Saint-Exupéry",
                 true,
                 "01/01/1943",
@@ -17,7 +17,7 @@ public class Generador {
 
         LlibrePaper libro2 = new LlibrePaper(
                 "Cien años de soledad",
-                "9786070720721",
+                "9786070720745",
                 "Gabriel García Márquez",
                 true,
                 "05/30/1967",
