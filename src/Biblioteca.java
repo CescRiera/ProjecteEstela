@@ -59,16 +59,12 @@ public class Biblioteca {
         LlistaLlibresAudiovisuals = Generador.generateAudioBooks();
         LlistaVinilo = Generador.generateVinylRecords();
 
+        LlistaClients = Generador.generarClients();
+
         List<Usuario> listaUsuarios = new ArrayList<>();
         listaUsuarios.add(new Administrador("admin", "admin", "Admin", "Root", "12345678X", "123456789", "Calle Admin 123"));
         listaUsuarios.add(new Treballador("usuario1", "pass123", "Usuario1", "Apellido1", "87654321Y", "987654321", "Calle Usuario 1"));
         listaUsuarios.add(new Treballador("usuario2", "pass456", "Usuario2", "Apellido2", "56789012Z", "987654321", "Calle Usuario 2"));
-
-        List<Client> llistaClients = new ArrayList<>();
-        //llistaClients.add(new ClientEscola("123", "Juan", "Pérez", "juan@gmail.com", "Premium"));
-        llistaClients.add(new ClientPrivat("123", "Ana", "Gómez", "ana@gmail.com"));
-        llistaClients.add(new ClientPrivat("56789012Z", "Carlos", "Martínez", "carlos@gmail.com"));
-
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Ingrese su nombre: ");
@@ -82,7 +78,7 @@ public class Biblioteca {
 
             System.out.print("Introduzca DNI Cliente:");
             String idU = scanner.nextLine();
-            Client c = buscarClientDni(llistaClients, idU);
+            Client c = buscarClientDni(LlistaClients, idU);
 
             if (c != null) {
                 c.menu();
