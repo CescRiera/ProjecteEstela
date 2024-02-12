@@ -62,4 +62,52 @@ abstract class Client {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public Date getDataIniciPrestec() {
+        return dataIniciPrestec;
+    }
+
+    public void setDataIniciPrestec(Date dataIniciPrestec) {
+        this.dataIniciPrestec = dataIniciPrestec;
+    }
+
+    public Date getDataDevolucio() {
+        return dataDevolucio;
+    }
+
+    public void setDataDevolucio(Date dataDevolucio) {
+        this.dataDevolucio = dataDevolucio;
+    }
+
+    public LlibrePaper getLlibrePaperEnPrestec() {
+        return llibrePaperEnPrestec;
+    }
+
+    public void setLlibrePaperEnPrestec(LlibrePaper llibrePaperEnPrestec) {
+        this.llibrePaperEnPrestec = llibrePaperEnPrestec;
+    }
+
+    public LlibreAudiovisual getLlibreAudiovisualEnPrestec() {
+        return llibreAudiovisualEnPrestec;
+    }
+
+    public void setLlibreAudiovisualEnPrestec(LlibreAudiovisual llibreAudiovisualEnPrestec) {
+        this.llibreAudiovisualEnPrestec = llibreAudiovisualEnPrestec;
+    }
+
+    public Vinilo getViniloEnPrestec() {
+        return viniloEnPrestec;
+    }
+
+    public void setViniloEnPrestec(Vinilo viniloEnPrestec) {
+        this.viniloEnPrestec = viniloEnPrestec;
+    }
+
+    public String getLlibreesperat() {
+        return llibreesperat;
+    }
+
+    public void setLlibreesperat(String llibreesperat) {
+        this.llibreesperat = llibreesperat;
+    }
 }

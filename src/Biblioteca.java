@@ -43,7 +43,7 @@ public class Biblioteca {
         LlistaLlibresPaper = llistaLlibresPaper;
     }
 
-    public static ArrayList<Client> getLlistaClients() {
+    public ArrayList<Client> getLlistaClients() {
         return LlistaClients;
     }
 
