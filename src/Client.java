@@ -8,6 +8,9 @@ abstract class Client {
     private String nom;
     private String cognom;
     private String email;
+
+    private String llibreesperat;
+
     //private Date dataIniciPrestec;
     //private Date dataDevolucio;
     public abstract void menu();
