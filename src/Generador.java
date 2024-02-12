@@ -65,7 +65,8 @@ public class Generador {
                 "The Beatles",
                 45,
                 "Abbey Road",
-                1969
+                1969,
+                "9786070720722"
         );
         llistaVinilos.add(vinilo1);
 
@@ -73,7 +74,8 @@ public class Generador {
                 "Pink Floyd",
                 42,
                 "The Dark Side of the Moon",
-                1973
+                1973,
+                "9786070720723"
         );
         llistaVinilos.add(vinilo2);
 
@@ -81,7 +83,8 @@ public class Generador {
                 "Led Zeppelin",
                 40,
                 "Led Zeppelin IV",
-                1971
+                1971,
+                "9786070720724"
         );
         llistaVinilos.add(vinilo3);
 
@@ -89,7 +92,8 @@ public class Generador {
                 "Bob Dylan",
                 36,
                 "Highway 61 Revisited",
-                1965
+                1965,
+                "9786070720725"
         );
         llistaVinilos.add(vinilo4);
 
@@ -97,7 +101,8 @@ public class Generador {
                 "The Rolling Stones",
                 38,
                 "Exile on Main St.",
-                1972
+                1972,
+                "9786070720726"
         );
         llistaVinilos.add(vinilo5);
 
@@ -106,15 +111,12 @@ public class Generador {
     public static ArrayList<Client> generarClients(){
         ArrayList<Client> clientes = new ArrayList<>();
 
-        for (int i = 0; i < 7; i++) {
-            clientes.add(new ClientPrivat("DNI" + i, "Nom" + i, "Cognom" + i, "email" + i + "@example.com"));
-        }
-
-        // Crear 5 instancias de ClientEscola
-        for (int i = 0; i < 7; i++) {
-            clientes.add(new ClientEscola("DNI-Escola" + i, "NomEscola" + i, "CognomEscola" + i, "escola" + i + "@example.com"));
-        }
-
+        clientes.add(new ClientEscola("123456", "María", "López", "maria@example.com"));
+        clientes.add(new ClientEscola("ABC123456Z", "Pedro", "García", "pedro@example.com"));
+        clientes.add(new ClientEscola("XYZ789012B", "Laura", "Fernández", "laura@example.com"));
+        clientes.add(new ClientEscola("DEF456789C", "Daniel", "Rodríguez", "daniel@example.com"));
+        clientes.add(new ClientPrivat("GHI012345D", "Sara", "Martínez", "sara@example.com"));
+        clientes.add(new ClientPrivat("JKL678901E", "Javier", "Sánchez", "javier@example.com"));
         clientes.add(new ClientPrivat("123","Didac","Gay","tonto@lol.lol"));
 
         return clientes;

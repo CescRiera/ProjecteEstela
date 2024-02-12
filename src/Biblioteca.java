@@ -58,7 +58,6 @@ public class Biblioteca {
         LlistaLlibresPaper = Generador.generatePaperBooks();
         LlistaLlibresAudiovisuals = Generador.generateAudioBooks();
         LlistaVinilo = Generador.generateVinylRecords();
-
         LlistaClients = Generador.generarClients();
 
         List<Usuario> listaUsuarios = new ArrayList<>();
