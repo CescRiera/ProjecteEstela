@@ -8,8 +8,13 @@ abstract class Client {
     private String nom;
     private String cognom;
     private String email;
-    //private Date dataIniciPrestec;
-    //private Date dataDevolucio;
+    private Date dataIniciPrestec;
+    private Date dataDevolucio;
+    private  LlibrePaper llibrePaperEnPrestec;
+    private  LlibreAudiovisual llibreAudiovisualEnPrestec;
+    private Vinilo viniloEnPrestec;
+
+
     public abstract void menu();
 
     public Client(String dni, String nom, String cognom, String emailW) {
@@ -52,4 +57,46 @@ abstract class Client {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public Date getDataIniciPrestec() {
+        return dataIniciPrestec;
+    }
+
+    public void setDataIniciPrestec(Date dataIniciPrestec) {
+        this.dataIniciPrestec = dataIniciPrestec;
+    }
+
+    public Date getDataDevolucio() {
+        return dataDevolucio;
+    }
+
+    public void setDataDevolucio(Date dataDevolucio) {
+        this.dataDevolucio = dataDevolucio;
+    }
+    public LlibrePaper getLlibrePaperEnPrestec() {
+        return llibrePaperEnPrestec;
+    }
+
+    public void setLlibrePaperEnPrestec(LlibrePaper llibrePaperEnPrestec) {
+        this.llibrePaperEnPrestec = llibrePaperEnPrestec;
+    }
+
+    public LlibreAudiovisual getLlibreAudiovisualEnPrestec() {
+        return llibreAudiovisualEnPrestec;
+    }
+
+    public void setLlibreAudiovisualEnPrestec(LlibreAudiovisual llibreAudiovisualEnPrestec) {
+        this.llibreAudiovisualEnPrestec = llibreAudiovisualEnPrestec;
+    }
+
+    public Vinilo getViniloEnPrestec() {
+        return viniloEnPrestec;
+    }
+
+    public void setViniloEnPrestec(Vinilo viniloEnPrestec) {
+        this.viniloEnPrestec = viniloEnPrestec;
+    }
+
+
+
 }

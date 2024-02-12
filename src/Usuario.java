@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Scanner;
@@ -51,33 +52,80 @@ abstract class Usuario {
     public String getDireccion() {
         return direccion;
     }
-/**
-    public void Prestar(Client client,LlibrePaper llibre){
-        if(client.getProducteEnPrestec() == null && llibre.isDisponibilitat()){
-            llibre.setDisponibilitat(false);
-            client.setProducteEnPrestec(llibre);
-            client.setDataIniciPrestec(new Date());
-            Calendar calendar = Calendar.getInstance();
-            calendar.setTime(client.getDataIniciPrestec());
-            calendar.add(Calendar.MONTH,1);
-            client.setDataDevolucio(calendar.getTime());
-            System.out.println("El client te fins el "+client.getDataDevolucio()+" per retornar el llibre");
-        } else if (!llibre.isDisponibilitat()) {
-            System.out.println("El llibre no es troba disponible");
-        } else if (client.getProducteEnPrestec()!=null) {
-            System.out.println("El client ja te un producte prestat");
+
+    public void Prestar(Client client,Biblioteca biblioteca,String isbn){
+
+        for(int i = 0; i<biblioteca.getLlistaLlibresPaper().size();i++){
+            if(biblioteca.getLlistaLlibresPaper().get(i).getIsbn() == isbn){
+                if(client.getLlibrePaperEnPrestec() == null && biblioteca.getLlistaLlibresPaper().get(i).isDisponibilitat()){
+                    biblioteca.getLlistaLlibresPaper().get(i).setDisponibilitat(false);
+                    client.setLlibrePaperEnPrestec(biblioteca.getLlistaLlibresPaper().get(i));
+                    client.setDataIniciPrestec(new Date());
+                    Calendar calendar = Calendar.getInstance();
+                    calendar.setTime(client.getDataIniciPrestec());
+                    calendar.add(Calendar.MONTH,1);
+                    client.setDataDevolucio(calendar.getTime());
+                    System.out.println("El client te fins el "+client.getDataDevolucio()+" per retornar el llibre");
+                } else if (!biblioteca.getLlistaLlibresPaper().get(i).isDisponibilitat()) {
+                    System.out.println("El llibre no es troba disponible");
+                } else if (client.getLlibrePaperEnPrestec()!=null) {
+                    System.out.println("El client ja te un producte prestat");
+                }
+            }
         }
-    }
-    public void Retornar(Client client, LlibrePaper llibre){
-        if(client.getProducteEnPrestec()!=null){
-            llibre.setDisponibilitat(true);
-            client.setProducteEnPrestec(null);
-            client.setDataIniciPrestec(null);
-            client.setDataDevolucio(null);
-            System.out.println("El llibre ha sigut retornat");
+        for(int i = 0; i<biblioteca.getLlistaLlibresAudiovisuals().size();i++){
+            if(biblioteca.getLlistaLlibresAudiovisuals().get(i).getIsbn() == isbn){
+                if(client.getLlibreAudiovisualEnPrestec() == null && biblioteca.getLlistaLlibresAudiovisuals().get(i).isDisponibilitat()){
+                    biblioteca.getLlistaLlibresAudiovisuals().get(i).setDisponibilitat(false);
+                    client.setLlibreAudiovisualEnPrestec(biblioteca.getLlistaLlibresAudiovisuals().get(i));
+                    client.setDataIniciPrestec(new Date());
+                    Calendar calendar = Calendar.getInstance();
+                    calendar.setTime(client.getDataIniciPrestec());
+                    calendar.add(Calendar.MONTH,1);
+                    client.setDataDevolucio(calendar.getTime());
+                    System.out.println("El client te fins el "+client.getDataDevolucio()+" per retornar el llibre");
+                } else if (!biblioteca.getLlistaLlibresPaper().get(i).isDisponibilitat()) {
+                    System.out.println("El llibre no es troba disponible");
+                } else if (client.getLlibrePaperEnPrestec()!=null) {
+                    System.out.println("El client ja te un producte prestat");
+                }
+            }
         }
+
     }
- **/
+    public void Retornar(Client client,Biblioteca biblioteca, String isbn){
+        for(int i = 0;i<biblioteca.getLlistaLlibresPaper().size();i++){
+            if(biblioteca.getLlistaLlibresPaper().get(i).getIsbn() == isbn){
+                if(client.getLlibrePaperEnPrestec()!=null){
+                    biblioteca.getLlistaLlibresPaper().get(i).setDisponibilitat(true);
+                    client.setLlibrePaperEnPrestec(null);
+                    client.setDataIniciPrestec(null);
+                    client.setDataDevolucio(null);
+                    System.out.println("El llibre ha sigut retornat");
+                }
+                else{
+                    break;
+                }
+            }
+        }
+        for(int i = 0;i<biblioteca.getLlistaLlibresAudiovisuals().size();i++){
+            if(biblioteca.getLlistaLlibresAudiovisuals().get(i).getIsbn() == isbn){
+                if(client.getLlibreAudiovisualEnPrestec()!=null){
+                    biblioteca.getLlistaLlibresAudiovisuals().get(i).setDisponibilitat(true);
+                    client.setLlibreAudiovisualEnPrestec(null);
+                    client.setDataIniciPrestec(null);
+                    client.setDataDevolucio(null);
+                    System.out.println("El llibre ha sigut retornat");
+                }
+                else{
+                    break;
+                }
+            }
+        }
+
+
+
+    }
 
     public String getContrasena() {
         return this.contrasenya;
